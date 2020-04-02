@@ -6,4 +6,5 @@ Manages your money, you can have 3 profiles, save and load and see total or mont
 -Windows Forms Application
 
 # What I learned
--Data saving
+- Basics of C#
+- Data processing
