@@ -563,21 +563,9 @@ namespace MoneyManager
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string dirMain = @"C:\Users\Public\moneymanagerData";
-            int dirCount = Directory.GetFiles(dirMain).Length;
-            if (!Directory.Exists(dirMain) || dirCount < 9)
-            {
-                Directory.CreateDirectory(@"C:\Users\Public\moneymanagerData");
-                if (!File.Exists(@"C:\Users\Public\moneymanagerData\money_data.txt")) { File.Create(@"C:\Users\Public\moneymanagerData\money_data.txt").Close(); }              
-                if (!File.Exists(@"C:\Users\Public\moneymanagerData\money_data1.txt")) { File.Create(@"C:\Users\Public\moneymanagerData\money_data1.txt").Close(); }
-                if (!File.Exists(@"C:\Users\Public\moneymanagerData\money_data2.txt")) { File.Create(@"C:\Users\Public\moneymanagerData\money_data2.txt").Close(); }
-                if (!File.Exists(@"C:\Users\Public\moneymanagerData\money2_data.txt")) { File.Create(@"C:\Users\Public\moneymanagerData\money2_data.txt").Close(); }
-                if (!File.Exists(@"C:\Users\Public\moneymanagerData\money2_data1.txt")) { File.Create(@"C:\Users\Public\moneymanagerData\money2_data1.txt").Close(); }
-                if (!File.Exists(@"C:\Users\Public\moneymanagerData\money2_data2.txt")) { File.Create(@"C:\Users\Public\moneymanagerData\money2_data2.txt").Close(); }
-                if (!File.Exists(@"C:\Users\Public\moneymanagerData\currency.txt")) { File.Create(@"C:\Users\Public\moneymanagerData\currency.txt").Close(); }
-                if (!File.Exists(@"C:\Users\Public\moneymanagerData\currency1.txt")) { File.Create(@"C:\Users\Public\moneymanagerData\currency1.txt").Close(); }
-                if (!File.Exists(@"C:\Users\Public\moneymanagerData\currency2.txt")) { File.Create(@"C:\Users\Public\moneymanagerData\currency2.txt").Close(); }
-            }
+            MoneyFiles mf = new MoneyFiles();
+
+            mf.files();
         }
 
         private void txtAmount_TextChanged(object sender, EventArgs e)
